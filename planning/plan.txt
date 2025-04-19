@@ -1,3 +1,36 @@
 THE TASK
 Build a tic-tac-toe game on the command line where two human players can play
 against each other and the board is displayed in between turns.
+
+THE COMPONENTS
+  GAME BOARD
+    A 3x3 grid with squares numbered 1 through 9. For example:
+    [1][2][3]
+    [4][5][6]
+    [7][8][9]
+  
+  PIECES 
+    The Noughts (O) and Crosses (X) which can be placed on any square in the 
+    game board. For example:
+    [X][O][3]
+    [4][X][O]
+    [7][8][X]
+
+  PLAYERS
+    The two human players (or one human playing both) involved in the game. 
+
+THE APPLICATION FLOW
+
+  "Player1, optionally type in a username. Press enter to submit or skip."
+  "Thank you ()."
+  "Player2, optionally type in a username. Press enter to submit or skip."
+  "Thank you ()."
+
+  If user skips, simply have their name be Player().
+
+  If user enters a name greater than 12 characters:
+    "Error. Username must not exceed 12 characters. Try again."
+    Let the user try again until they skip or enter a valid name. 
+
+  "Welcome Player1 and Player2 to a game of Tic-Tac-Toe. Good luck, and have 
+  fun!"
