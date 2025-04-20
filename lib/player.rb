@@ -1,9 +1,9 @@
 # rubocop:disable all
 
 class Player
-  private
-
   attr_reader :player_number
+  
+  private
 
   @@number_of_players = 0
 
@@ -16,6 +16,5 @@ class Player
     @@number_of_players
   end
 end
-
 
 # rubocop:enable all
