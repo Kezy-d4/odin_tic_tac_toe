@@ -12,5 +12,3 @@ class TicTacToe
 end
 
 TicTacToe.new
-
-# rubocop:enable all

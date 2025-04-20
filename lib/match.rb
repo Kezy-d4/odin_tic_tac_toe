@@ -34,19 +34,20 @@ class Match
     sleep(3)
 
     # flip a coin to assign player1's piece
-    flip_a_coin ? player1.playing_piece = NOUGHTS : 
-    player1.playing_piece = CROSSES
+    flip_a_coin ? 
+    player1.playing_piece_assignment = NOUGHTS :
+    player1.playing_piece_assignment = CROSSES
 
     # assign player2 the opposite piece to player1
-    player1.playing_piece == NOUGHTS ? player2.playing_piece = CROSSES :
-    player2.playing_piece = NOUGHTS
+    player1.playing_piece_assignment == NOUGHTS ? 
+    player2.playing_piece_assignment = CROSSES :
+    player2.playing_piece_assignment = NOUGHTS
 
-    puts "It's decided! #{player1.player_number} will play " +
-         "#{player1.playing_piece} and #{player2.player_number} " +
-         "will play #{player2.playing_piece}."
+    puts "It's been decided! #{player1.player_number} will play " +
+         "#{player1.playing_piece_assignment} and, " +
+         "#{player2.player_number} will play " +
+         "#{player2.playing_piece_assignment}."
 
     sleep(3)
   end
 end
-
-# rubocop:enable all
