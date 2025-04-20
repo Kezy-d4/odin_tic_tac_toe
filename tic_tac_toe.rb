@@ -11,6 +11,6 @@ class TicTacToe
   end
 end
 
-tic_tac_toe = TicTacToe.new
+TicTacToe.new
 
 # rubocop:enable all
