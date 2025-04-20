@@ -20,17 +20,3 @@ THE COMPONENTS
     The two human players (or one human playing both) involved in the game. 
 
 THE APPLICATION FLOW
-
-  "Player1, optionally type in a username. Press enter to submit or skip."
-  "Thank you ()."
-  "Player2, optionally type in a username. Press enter to submit or skip."
-  "Thank you ()."
-
-  If user skips, simply have their name be Player().
-
-  If user enters a name greater than 12 characters:
-    "Error. Username must not exceed 12 characters. Try again."
-    Let the user try again until they skip or enter a valid name. 
-
-  "Welcome Player1 and Player2 to a game of Tic-Tac-Toe. Good luck, and have 
-  fun!"
