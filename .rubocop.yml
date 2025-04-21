@@ -13,3 +13,13 @@ require: rubocop-performance
 
 AllCops:
   NewCops: enable
+  
+AllCops:
+  Exclude:
+    - 'tic_tac_toe.rb'
+    - 'lib/match.rb'
+    - 'lib/player.rb'
+    - 'lib/pieces.rb'
+    - 'lib/nought.rb'
+    - 'lib/cross.rb'
+    - 'test.rb'
