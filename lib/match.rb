@@ -1,7 +1,10 @@
 require_relative 'player'
 require_relative 'pieces'
+require_relative 'helper'
 
 class Match
+  include Helper
+
   attr_reader :player1, :player2
 
   private
@@ -15,14 +18,6 @@ class Match
     assign_playing_pieces
 
     alert_assignments
-  end
-
-  def new_line
-    puts "\n"
-  end
-
-  def flip_a_coin
-    [true, false].sample # 50% chance of flipping true
   end
 
   def greet_players
@@ -42,21 +37,21 @@ class Match
     player2.playing_piece_assignment = 
       (player1.playing_piece_assignment == NOUGHTS ? CROSSES : NOUGHTS)
   end
-end
 
-def alert_assignments
-  new_line
-
-  puts 'Now randomly assigning the playing pieces...'
-
-  sleep(3)
-
-  new_line
-
-  puts "It's been decided! #{player1.player_number} will play " \
-       "#{player1.playing_piece_assignment} and " \
-       "#{player2.player_number} will play " \
-       "#{player2.playing_piece_assignment}."
-
-  sleep(3)
+  def alert_assignments
+    new_line
+  
+    puts 'Now randomly assigning the playing pieces...'
+  
+    sleep(3)
+  
+    new_line
+  
+    puts "It's been decided! #{player1.player_number} will play " \
+         "#{player1.playing_piece_assignment} and " \
+         "#{player2.player_number} will play " \
+         "#{player2.playing_piece_assignment}."
+  
+    sleep(3)
+  end
 end
