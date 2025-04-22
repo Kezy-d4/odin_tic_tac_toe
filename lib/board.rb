@@ -1,5 +1,5 @@
-require_relative 'helper'
 require_relative 'pieces'
+require_relative 'helper'
 
 class Board
   include Helper
@@ -73,11 +73,11 @@ class Board
   end
 
   def noughts_winner?
-    true if evaluate_win_conditions(Nought::PLAYING_PIECE)
+    true if evaluate_win_conditions(Nought::NOUGHT)
   end
 
   def crosses_winner?
-    true if evaluate_win_conditions(Cross::PLAYING_PIECE)
+    true if evaluate_win_conditions(Cross::CROSS)
   end
 end
 

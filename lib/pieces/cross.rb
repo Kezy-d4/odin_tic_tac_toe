@@ -1,9 +1,9 @@
 require_relative '../pieces'
+require_relative '../helper'
 
 class Cross
-  attr_reader :NAME, :NAME_PLURAL, :PLAYING_PIECE
+  attr_reader :CROSSES, :CROSS
 
-  NAME = 'Cross (X)'
-  NAME_PLURAL = 'Crosses (X)'
-  PLAYING_PIECE = 'X'
+  CROSSES = "Crosses (X)"
+  CROSS = "X"
 end

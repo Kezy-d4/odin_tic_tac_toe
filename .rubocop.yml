@@ -17,7 +17,6 @@ AllCops:
 AllCops:
   Exclude:
     - 'tic_tac_toe.rb'
-    - 'lib/match.rb'
     - 'lib/player.rb'
     - 'lib/pieces.rb'
     - 'lib/pieces/nought.rb'

@@ -1,9 +1,9 @@
 require_relative '../pieces'
+require_relative '../helper'
 
 class Nought
-  attr_reader :NAME, :NAME_PLURAL, :PLAYING_PIECE
+  attr_reader :NOUGHTS, :NOUGHT
 
-  NAME = 'Nought (O)'
-  NAME_PLURAL = 'Noughts (O)'
-  PLAYING_PIECE = 'O'
+  NOUGHTS = "Noughts (O)"
+  NOUGHT = "O"
 end
