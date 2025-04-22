@@ -14,14 +14,14 @@ require: rubocop-performance
 AllCops:
   NewCops: enable
   
-AllCops:
-  Exclude:
-    - 'tic_tac_toe.rb'
-    - 'lib/match.rb'
-    - 'lib/player.rb'
-    - 'lib/pieces.rb'
-    - 'lib/pieces/nought.rb'
-    - 'lib/pieces/cross.rb'
-    - 'lib/board.rb'
-    - 'lib/helper.rb'
-    - 'test.rb'
+# AllCops:
+#   Exclude:
+#     - 'tic_tac_toe.rb'
+#     - 'lib/match.rb'
+#     - 'lib/player.rb'
+#     - 'lib/pieces.rb'
+#     - 'lib/pieces/nought.rb'
+#     - 'lib/pieces/cross.rb'
+#     - 'lib/board.rb'
+#     - 'lib/helper.rb'
+#     - 'test.rb'
