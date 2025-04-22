@@ -4,6 +4,6 @@ require_relative '../helper'
 class Cross
   attr_reader :CROSSES, :CROSS
 
-  CROSSES = "Crosses (X)"
-  CROSS = "X"
+  CROSSES = 'Crosses (X)'
+  CROSS = 'X'
 end

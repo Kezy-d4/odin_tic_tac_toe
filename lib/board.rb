@@ -80,5 +80,3 @@ class Board
     true if evaluate_win_conditions(Cross::CROSS)
   end
 end
-
-

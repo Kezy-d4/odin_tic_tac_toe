@@ -4,6 +4,6 @@ require_relative '../helper'
 class Nought
   attr_reader :NOUGHTS, :NOUGHT
 
-  NOUGHTS = "Noughts (O)"
-  NOUGHT = "O"
+  NOUGHTS = 'Noughts (O)'
+  NOUGHT = 'O'
 end

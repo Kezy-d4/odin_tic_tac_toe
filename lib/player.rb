@@ -11,8 +11,8 @@ class Player
   def initialize
     @@number_of_players += 1
     @player_number = @@number_of_players
-    @name = "Player#{player_number.to_s}"
-    @playing_piece = ""
-    @full_id = ""
+    @name = "Player#{player_number}"
+    @playing_piece = ''
+    @full_id = ''
   end
 end

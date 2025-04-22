@@ -15,25 +15,27 @@ class TicTacToe
 
   def greet_players_message
     puts "Welcome #{player1.name} and #{player2.name} to " \
-    "a game of Tic-Tac-Toe. Good luck, and have fun!"
+         'a game of Tic-Tac-Toe. Good luck, and have fun!'
     sleep(3)
   end
 
   def playing_piece_assignment_message
-    puts "Now flipping a coin to assign your playing pieces..."
+    puts 'Now flipping a coin to assign your playing pieces...'
     sleep(3)
   end
 
   def assign_playing_pieces
     # flip a coin to assign player1's piece.
-    player1.playing_piece = 
-    (flip_a_coin ? Nought::NOUGHT : Cross::CROSS)
+    player1.playing_piece =
+      (flip_a_coin ? Nought::NOUGHT : Cross::CROSS)
 
     # assign player2 the opposite piece to player1.
     player2.playing_piece =
-    (player1.playing_piece == Nought::NOUGHT ? 
-      Cross::CROSS : 
-      Nought::NOUGHT)
+      (if player1.playing_piece == Nought::NOUGHT
+         Cross::CROSS
+       else
+         Nought::NOUGHT
+       end)
   end
 
   def assign_full_ids
@@ -42,7 +44,7 @@ class TicTacToe
   end
 
   def playing_pieces_assigned_message
-    puts "It's been decided. Your assignments are as follows: " 
+    puts 'It\'s been decided. Your assignments are as follows: '
     sleep(3)
 
     puts player1.full_id
@@ -50,7 +52,7 @@ class TicTacToe
     puts player2.full_id
     sleep(3)
 
-    puts "Let's play!"
+    puts 'Let\'s play!'
     sleep(3)
   end
 end
