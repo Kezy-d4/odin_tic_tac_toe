@@ -73,17 +73,12 @@ class Board
   end
 
   def noughts_winner?
-    evaluate_win_conditions(Nought::PLAYING_PIECE)
+    true if evaluate_win_conditions(Nought::PLAYING_PIECE)
   end
 
   def crosses_winner?
-    evaluate_win_conditions(Cross::PLAYING_PIECE)
+    true if evaluate_win_conditions(Cross::PLAYING_PIECE)
   end
 end
 
-my_board = Board.new
-my_board.spot1 = Cross::PLAYING_PIECE
-my_board.spot2 = Cross::PLAYING_PIECE
-my_board.spot3 = Cross::PLAYING_PIECE
-my_board.render_board
-puts "Winner!" if my_board.crosses_winner?
+
