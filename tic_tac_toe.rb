@@ -1,16 +1,37 @@
+# frozen_string_literal: true
+
 require_relative 'lib/player'
 require_relative 'lib/board'
 require_relative 'lib/pieces'
 require_relative 'lib/helper'
 
+# The game
 class TicTacToe
   include Helper
 
-  attr_reader :player1, :player2
+  attr_accessor :player1, :player2, :board, :first_mover, :active_player
 
   def initialize
     @player1 = Player.new
     @player2 = Player.new
+    @board = Board.new
+    @first_mover = ''
+    @active_player = ''
+  end
+
+  def play_game
+    start_game
+  end
+
+  def start_game
+    greet_players_message
+    playing_piece_assignment_message
+    assign_playing_pieces
+    assign_full_ids
+    playing_pieces_assigned_message
+    determine_first_mover
+    active_player_message
+    board.render_board
   end
 
   def greet_players_message
@@ -20,7 +41,7 @@ class TicTacToe
   end
 
   def playing_piece_assignment_message
-    puts 'Now flipping a coin to assign your playing pieces...'
+    puts 'Now flipping a coin to decide how to assign your playing pieces...'
     sleep(3)
   end
 
@@ -45,21 +66,32 @@ class TicTacToe
 
   def playing_pieces_assigned_message
     puts 'It\'s been decided. Your assignments are as follows: '
-    sleep(3)
+    sleep(2.5)
 
     puts player1.full_id
-    sleep(3)
+    sleep(2)
     puts player2.full_id
-    sleep(3)
+    sleep(2)
 
     puts 'Let\'s play!'
-    sleep(3)
+    sleep(2)
+  end
+
+  def determine_first_mover
+    cross_player =
+      [player1, player2].find { |player| player.playing_piece == Cross::CROSS }
+
+    self.first_mover = cross_player
+    self.active_player = first_mover
+  end
+
+  def active_player_message
+    puts "#{active_player.full_id}, it's your move! " \
+         'Submit the number that corresponds to the spot on the board where ' \
+         'you\'d like to place your next piece:'
+    sleep(1)
   end
 end
 
 my_game = TicTacToe.new
-my_game.greet_players_message
-my_game.playing_piece_assignment_message
-my_game.assign_playing_pieces
-my_game.assign_full_ids
-my_game.playing_pieces_assigned_message
+my_game.play_game

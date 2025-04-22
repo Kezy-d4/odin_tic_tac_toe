@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'pieces'
 require_relative 'helper'
 
+# The game board
 class Board
   include Helper
 
