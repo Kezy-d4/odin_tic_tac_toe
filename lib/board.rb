@@ -1,4 +1,5 @@
 require_relative 'helper'
+require_relative 'pieces'
 
 class Board
   include Helper
@@ -60,7 +61,29 @@ class Board
       new_line
     end
   end
+
+  def win_conditions
+    [row1, row2, row3, column_a, column_b, column_c, diagonal_x, diagonal_y]
+  end
+
+  def evaluate_win_conditions(playing_piece)
+    win_conditions.find do |win_condition|
+      win_condition.all?(playing_piece)
+    end
+  end
+
+  def noughts_winner?
+    evaluate_win_conditions(Nought::PLAYING_PIECE)
+  end
+
+  def crosses_winner?
+    evaluate_win_conditions(Cross::PLAYING_PIECE)
+  end
 end
 
 my_board = Board.new
+my_board.spot1 = Cross::PLAYING_PIECE
+my_board.spot2 = Cross::PLAYING_PIECE
+my_board.spot3 = Cross::PLAYING_PIECE
 my_board.render_board
+puts "Winner!" if my_board.crosses_winner?
