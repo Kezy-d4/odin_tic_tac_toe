@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'colorize'
 require_relative 'lib/player'
 require_relative 'lib/board'
 require_relative 'lib/pieces'
@@ -45,6 +46,7 @@ class TicTacToe
       active_player.prompt_player_input
     end
     update_board(active_player.player_input)
+    active_player.remove_selected_input(active_player.player_input)
     active_player.clear_player_input
     switch_active_player unless board.crosses_winner? || board.noughts_winner?
   end

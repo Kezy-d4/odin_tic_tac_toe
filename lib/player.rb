@@ -10,7 +10,7 @@ class Player
   attr_accessor :playing_piece, :full_id, :player_input
 
   @@number_of_players = 0
-  @@valid_input = (1..9)
+  @@valid_input = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   def initialize
     @@number_of_players += 1
@@ -28,6 +28,10 @@ class Player
 
   def valid_player_input?
     @@valid_input.include?(player_input)
+  end
+
+  def remove_selected_input(player_input)
+    @@valid_input.reject! { |e| e == player_input }
   end
 
   def clear_player_input
