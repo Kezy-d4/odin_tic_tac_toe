@@ -6,8 +6,8 @@ require_relative 'helper'
 
 # The players
 class Player
-  attr_reader :player_number, :name, :valid_input
-  attr_accessor :playing_piece, :full_id, :player_input
+  attr_reader :player_number, :name
+  attr_accessor :playing_piece, :full_id, :player_input, :valid_input
 
   @@number_of_players = 0
   @@valid_input = [1, 2, 3, 4, 5, 6, 7, 8, 9]

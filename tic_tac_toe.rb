@@ -21,14 +21,13 @@ class TicTacToe
 
   def play_game
     start_game
+
     9.times do
       game_loop
       break if board.crosses_winner? || board.noughts_winner?
     end
 
-    board.crosses_winner? || board.noughts_winner? ?
-    winner :
-    draw
+    board.crosses_winner? || board.noughts_winner? ? winner : draw
   end
 
   def start_game
@@ -42,9 +41,9 @@ class TicTacToe
 
   def game_loop
     prompt_active_player
-    until active_player.valid_player_input?
-      active_player.prompt_player_input
-    end
+
+    active_player.prompt_player_input until active_player.valid_player_input?
+
     update_board(active_player.player_input)
     active_player.remove_selected_input(active_player.player_input)
     active_player.clear_player_input
@@ -80,8 +79,8 @@ class TicTacToe
   end
 
   def switch_active_player
-    self.active_player = 
-    [player1, player2].find { |player| active_player != player }
+    self.active_player =
+      [player1, player2].find { |player| active_player != player }
   end
 
   def winner
