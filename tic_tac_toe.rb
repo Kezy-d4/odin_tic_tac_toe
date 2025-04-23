@@ -21,6 +21,12 @@ class TicTacToe
 
   def play_game
     start_game
+    alert_active_player
+    until active_player.valid_player_input?
+      active_player.prompt_player_input
+    end
+    update_board(active_player.player_input)
+    board.render_board
   end
 
   def start_game
@@ -30,8 +36,34 @@ class TicTacToe
     assign_full_ids
     playing_pieces_assigned_message
     determine_first_mover
+  end
+
+  def alert_active_player
     active_player_message
     board.render_board
+  end
+
+  def update_board(player_input)
+    case player_input
+    when 1
+      board.spot1 = active_player.playing_piece
+    when 2
+      board.spot2 = active_player.playing_piece
+    when 3
+      board.spot3 = active_player.playing_piece
+    when 4
+      board.spot4 = active_player.playing_piece
+    when 5
+      board.spot5 = active_player.playing_piece
+    when 6
+      board.spot6 = active_player.playing_piece
+    when 7
+      board.spot7 = active_player.playing_piece
+    when 8
+      board.spot8 = active_player.playing_piece
+    when 9
+      board.spot9 = active_player.playing_piece
+    end
   end
 
   def greet_players_message
@@ -89,7 +121,7 @@ class TicTacToe
     puts "#{active_player.full_id}, it's your move! " \
          'Submit the number that corresponds to the spot on the board where ' \
          'you\'d like to place your next piece:'
-    sleep(1)
+    sleep(1.5)
   end
 end
 
