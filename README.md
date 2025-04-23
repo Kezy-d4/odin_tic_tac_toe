@@ -7,5 +7,4 @@ the repo onto your local machine, and then execute the main file,
 `tic_tac_toe.rb`.
 
 # Watch the game being played on the command line
-<video controls width="250">
-  <source src="./vid/tic_tac_toe_demo.webm" type="video/webm" />
+[tic_tac_toe_demo.webm](https://github.com/user-attachments/assets/29cd4c1f-0746-4c91-8417-072f7492a82d)
