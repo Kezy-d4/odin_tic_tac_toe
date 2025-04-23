@@ -2,11 +2,12 @@
 
 require_relative '../pieces'
 require_relative '../helper'
+require 'colorize'
 
 # Nought game pieces
 class Nought
   attr_reader :noughts, :nought
 
-  NOUGHTS = 'Noughts (O)'
-  NOUGHT = 'O'
+  NOUGHT = 'O'.colorize(:blue)
+  NOUGHTS = "Noughts (#{Nought::NOUGHT})"
 end

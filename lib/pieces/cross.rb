@@ -7,6 +7,6 @@ require_relative '../helper'
 class Cross
   attr_reader :crosses, :cross
 
-  CROSSES = 'Crosses (X)'
-  CROSS = 'X'
+  CROSS = 'X'.colorize(:red)
+  CROSSES = "Crosses (#{Cross::CROSS})"
 end

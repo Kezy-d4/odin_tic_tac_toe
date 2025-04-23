@@ -83,12 +83,12 @@ class TicTacToe
   end
 
   def winner
-    puts "Winner #{active_player.full_id}!"
+    puts "#{active_player.full_id} wins!"
     board.render_board
   end
 
   def draw
-    puts 'Draw!'
+    puts 'It\'s a Draw!'
     board.render_board
   end
 
