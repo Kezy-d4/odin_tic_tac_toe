@@ -9,24 +9,25 @@ require_relative 'lib/helper'
 class TicTacToe
   include Helper
 
-  attr_accessor :player1, :player2, :board, :first_mover, :active_player
+  attr_accessor :player1, :player2, :board, :active_player
 
   def initialize
     @player1 = Player.new
     @player2 = Player.new
     @board = Board.new
-    @first_mover = ''
     @active_player = ''
   end
 
   def play_game
     start_game
-    alert_active_player
-    until active_player.valid_player_input?
-      active_player.prompt_player_input
+    9.times do
+      game_loop
+      break if board.crosses_winner? || board.noughts_winner?
     end
-    update_board(active_player.player_input)
-    board.render_board
+
+    board.crosses_winner? || board.noughts_winner? ?
+    winner :
+    draw
   end
 
   def start_game
@@ -38,7 +39,17 @@ class TicTacToe
     determine_first_mover
   end
 
-  def alert_active_player
+  def game_loop
+    prompt_active_player
+    until active_player.valid_player_input?
+      active_player.prompt_player_input
+    end
+    update_board(active_player.player_input)
+    active_player.clear_player_input
+    switch_active_player unless board.crosses_winner? || board.noughts_winner?
+  end
+
+  def prompt_active_player
     active_player_message
     board.render_board
   end
@@ -64,6 +75,21 @@ class TicTacToe
     when 9
       board.spot9 = active_player.playing_piece
     end
+  end
+
+  def switch_active_player
+    self.active_player = 
+    [player1, player2].find { |player| active_player != player }
+  end
+
+  def winner
+    puts "Winner #{active_player.full_id}!"
+    board.render_board
+  end
+
+  def draw
+    puts 'Draw!'
+    board.render_board
   end
 
   def greet_players_message
@@ -105,23 +131,19 @@ class TicTacToe
     puts player2.full_id
     sleep(2)
 
-    puts 'Let\'s play!'
+    puts "#{Cross::CROSSES} plays first. Let's play."
     sleep(2)
   end
 
   def determine_first_mover
-    cross_player =
+    self.active_player =
       [player1, player2].find { |player| player.playing_piece == Cross::CROSS }
-
-    self.first_mover = cross_player
-    self.active_player = first_mover
   end
 
   def active_player_message
     puts "#{active_player.full_id}, it's your move! " \
          'Submit the number that corresponds to the spot on the board where ' \
          'you\'d like to place your next piece:'
-    sleep(1.5)
   end
 end
 
