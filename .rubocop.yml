@@ -9,18 +9,19 @@
 #
 # See https://docs.rubocop.org/rubocop/configuration
 
-require: rubocop-performance
+plugins:
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
-  
-# AllCops:
-#   Exclude:
-#     - 'tic_tac_toe.rb'
-#     - 'lib/player.rb'
-#     - 'lib/pieces.rb'
-#     - 'lib/pieces/nought.rb'
-#     - 'lib/pieces/cross.rb'
-#     - 'lib/board.rb'
-#     - 'lib/helper.rb'
-#     - 'test.rb'
+  Exclude:
+    - 'tic_tac_toe.rb'
+    - 'lib/player.rb'
+    - 'lib/pieces.rb'
+    - 'lib/pieces/nought.rb'
+    - 'lib/pieces/cross.rb'
+    - 'lib/board.rb'
+    - 'lib/helper.rb'
+    - 'Gemfile'
+    - 'spec/spec_helper.rb'
