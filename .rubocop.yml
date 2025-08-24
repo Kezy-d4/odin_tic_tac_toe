@@ -25,3 +25,9 @@ AllCops:
     - 'lib/helper.rb'
     - 'Gemfile'
     - 'spec/spec_helper.rb'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
